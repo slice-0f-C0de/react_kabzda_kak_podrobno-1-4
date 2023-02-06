@@ -1,26 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Rating from "./Rating/Rating";
+import Accordion from "./Accordion/Accordion";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div>
+            <Title title={"Components, Props & PropsType"}/>
+            <Rating value={3}/>
+            <Rating value={5}/>
+            <Accordion titleValue={"Menu"}/>
+            <Accordion titleValue={"Users"}/>
+        </div>
+    );
+}
+
+type TitlePropsType = {
+    title: string
+}
+
+function Title(props: TitlePropsType) {
+    return <h3>{props.title}</h3>
 }
 
 export default App;
